@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thence task</title>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Arimo:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+	<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+button {background-color: #008CBA;} /* Blue */
+</style>
+</head>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap boxed-container">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+                                <img src="dist/images/logo.svg" alt="Blue logo">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+				<div class="hero-left-decoration is-revealing"></div>
+				<div class="hero-right-decoration is-revealing"></div>
+                <div class="container">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0 is-revealing">REPORTING</h1>
+	                        <p class="hero-paragraph is-revealing">We will solve your problem in the best way..</p>
+	                        <p class="hero-cta mb-0 is-revealing">
+								<a class="button button-primary button-shadow" href="#">Get started now</a>
+							</p>
+						</div>
+						<div class="hero-illustration">
+						</div>
+                    </div>
+                </div>
+            </section>
+
+           
+
+			<section class="features section text-center">
+                <div class="container">
+                    <div class="features-inner section-inner has-top-divider">
+						<div class="features-header text-center">
+							<div class="container-sm">
+								<h2 class="section-title mt-0">About Us</h2>
+								<p class="section-paragraph mb-0">We have created a fictional website to control the city issues. Like every growing city, Bangalore also struggles with a lot of infrastructure problems. Government ofﬁcials are unable to act on them as lot of times these problems do not get reported. The city corporation feels that empowering the citizens and engaging them to take an active part in maintaining the city will be a sustainable solution. To make this possible, the corporation has decided to develop a website named Active Society, where citizens can report their issues such as Potholes in the road, Trafﬁc light not working, Garbage collection, etc
+</p>
+							</div>
+						</div>
+                        <div class="features-wrap">
+                            <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-01.svg" alt="Feature 01">
+                                    </div>
+                                    <h4 class="feature-title">Citizens </h4>
+                                    <p class="text-sm">Citizens canReport an issue, Check the status of an issue, Delete or close an issue
+</p>
+                                </div>
+                            </div>
+                            <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-02.svg" alt="Feature 02">
+                                    </div>
+                                    <h4 class="feature-title">Government officials</h4>
+                                    <p class="text-sm"> Government officials can Review an issue, Assign ofﬁcials, Update status of the issue</p>
+                                </div>
+                            </div>
+                            <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-03.svg" alt="Feature 03">
+                                    </div>
+                                    <h4 class="feature-title">Complaint</h4>
+                                    <p class="text-sm">citizens can report their issues such as Potholes in the road,Trafﬁc light not working,Garbage collection, etc</p>
+                                </div>
+                            </div>
+                            <div class="feature is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                        <img src="dist/images/feature-icon-04.svg" alt="Feature 04">
+                                    </div>
+                                    <h4 class="feature-title">Usage</h4>
+                                    <p class="text-sm">to take an active part in maintaining the city will be a sustainable solution.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+			<section class="features-tabs section">
+                <div class="container">
+                    <div class="features-tabs-inner section-inner has-top-divider">
+						<div class="tabs-container">
+							<ul class="tabs-links">
+								<li class="is-revealing">
+									<a href="#tab-1" class="tab-link is-active">
+										<img src="dist/images/tabs-icon-01.svg" alt="Tabs icon 01">
+										<span class="h4 m-0">Amazing features</span>
+									</a>
+								</li>
+								<li class="is-revealing">
+									<a href="#tab-2" class="tab-link">
+										<img src="dist/images/tabs-icon-02.svg" alt="Tabs icon 02">
+										<span class="h4 m-0">Endless possibilities</span>
+									</a>
+								</li>
+								<li class="is-revealing">
+									<a href="#tab-3" class="tab-link">
+										<img src="dist/images/tabs-icon-03.svg" alt="Tabs icon 03">
+										<span class="h4 m-0">Ease of use</span>
+									</a>
+								</li>
+							</ul>
+							<div class="tabs-content">
+								<div id="tab-1" class="tab-panel is-active">
+									<h2>How it works</h2>
+									<p>The user must sign up into the page with their correct username and password and then the user can report the problem</p>
+									<p class="mb-0">We will find the solution for the problem you reported.</p>
+								</div>
+								<div id="tab-2" class="tab-panel">
+									<h2>Status</h2>
+									<p>The user who made complaint can also view their status whether the work is pending or completed.</p>
+									<p class="mb-0">This helps the user to track their issues and the corrections made.</p>
+								</div>
+								<div id="tab-3" class="tab-panel">
+									<h2>Keep it simple</h2>
+									<p>Every citizen can made a complaint when they see any issues in their surrounding.The best way to correct the things around us.</p>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </section>
+
+			
+
+            <section class="pricing section">
+                <div class="container">
+                    <div class="pricing-inner section-inner">
+                        <h2 class="section-title mt-0 text-center">Working</h2>
+						<div>
+							<div class="pricing-tables-wrap">
+								<div class="pricing-table is-revealing">
+									<div class="pricing-table-inner">
+										<div class="pricing-table-main">
+											<div class="pricing-table-header mb-24 pb-24">
+												<div class="pricing-table-title h4 mt-0 mb-16">Citizens</div>
+												
+											</div>
+											<ul class="pricing-table-features list-reset text-xs">
+												<li>
+													<span> Report an issue 
+</span>
+												</li>
+												<li>
+													<span>Check the status of an issue 
+</span>
+												</li>
+												<li>
+													<span> Delete or close an issue
+</span>
+												</li>
+												
+										</div>
+										
+										
+										<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Report without Sign Up</button>
+
+<div id="id01" class="modal">
+	<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		<form class="modal-content" action="/action_page.php">
+			<div class="container">
+			<h1>Report without sign up</h1>
+			<p>Please fill in this form to submit your complaint.</p>
+			<hr>
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="Enter Email" name="email" required>
+
+			<label for="psw"><b>Complaint</b></label>
+			<input type="text" placeholder="Enter complaint" name="com" required>
+
+			<label for="psw-repeat"><b>Location</b></label>
+			<input type="text" placeholder="enter location with zipcode" name="loc" required>
+      
+			<label>
+				<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+			</label>
+
+			<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+				<div class="clearfix">
+					<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+					<button type="submit" class="signupbtn" onclick="myFunction()">Submit</button>
+	
+
+<script>
+function myFunction() {
+  alert("Submitted successfully!!");
+}
+</script>
+
+				</div>
+			</div>
+		</form>
+</div>
+
+										
+										
+										
+				
+
+		
+
+									</div>
+								</div>
+								<div class="pricing-table is-revealing">
+									<div class="pricing-table-inner">
+										<div class="pricing-table-main">
+											<div class="pricing-table-header mb-24 pb-24">
+												<div class="pricing-table-title h4 mt-0 mb-16">Government officials</div>
+												
+											</div>
+											<ul class="pricing-table-features list-reset text-xs">
+												<li>
+													<span> Review an issue 
+</span>
+												</li>
+												<li>
+													<span>Assign ofﬁcials </span>
+												</li>
+												<li>
+													<span>Update status of the issue</span>
+												</li>
+												
+											</ul>
+										</div>
+										<button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Sign Up</button>
+
+<div id="id03" class="modal">
+  <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign In</button>
+
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign In</h1>
+      <p>Please fill in this form to sign in</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      
+        
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+   
+      
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign In</button>
+		<span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+										
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-faqs container-sm is-revealing">
+							<h4 class="mt-40 mb-32">FAQs</h4>
+	                        <ul class="accordion">
+	                            <li>
+	                                <div class="accordion-title">
+										<span>How to get the current status?</span>
+										<div class="accordion-icon"></div>
+									</div>
+	                                <div class="accordion-body">
+	                                    <p>Once the complaint is received to the officials they will assign te work to the workers. You can see your status like pending,in-progress or completed</p>
+	                                </div>
+	                            </li>
+								<li>
+									<div class="accordion-title">
+										<span>Login issues</span>
+										<div class="accordion-icon"></div>
+									</div>
+									<div class="accordion-body">
+										<p>Click the resend passowrd button, this will send your password to your mail id with an option to change the password.</p>
+									</div>
+								</li>
+								<li>
+									<div class="accordion-title">
+										<span>issue not placed</span>
+										<div class="accordion-icon"></div>
+									</div>
+									<div class="accordion-body">
+										<p>Check that you choose the correct option to place a complaint.Or send your complaint through mail.</p>
+									</div>
+								</li>
+								<li>
+									<div class="accordion-title">
+										<span>What's the deal with this website?</span>
+										<div class="accordion-icon"></div>
+									</div>
+									<div class="accordion-body">
+										<p>This is the official complaint webstite tokeep your surrondings clean and traffic free.</p>
+									</div>
+								</li>
+	                        </ul>
+						</div>
+                    </div>
+                </div>
+            </section>
+
+			
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+                        <a href="#">
+                            <img src="dist/images/logo.svg" alt="Blue logo">
+                        </a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQ's</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        <li>
+                            <a href="#">
+                                <span class="screen-reader-text">Facebook</span>
+                                <svg width="16" height="16" xmlns="">
+                                    <path d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z" fill="#FFF"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="screen-reader-text">Twitter</span>
+                                <svg width="16" height="16" xmlns="">
+                                    <path d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z" fill="#FFF"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="screen-reader-text">Google</span>
+                                <svg width="16" height="16" xmlns="">
+                                    <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" fill="#FFF"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    
+            </div>
+        </footer>
+    </div>
+
+    <script src="dist/js/main.min.js"></script>
+</body>
+</html>
