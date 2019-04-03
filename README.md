@@ -1,12 +1,19 @@
-# Blue
-
-A landing page template.
-
-* [Getting started](#getting-started)
-
-## Getting started
-* First, ensure that node.js & npm are both installed. If not, choose your OS and installation method from [this page](https://nodejs.org/en/download/package-manager/) and follow the instructions.
-* Next, use your command line to enter your project directory.
-* This template comes with a ready-to-use package file called `package-sample.json`. You just need to rename it to `package.json`, then run `npm install` to install all of the dependencies into your project.
-
-You're ready to go! Run any task by typing `npm run task` (where "task" is the name of the task in the `"scripts"` object). The most useful task for rapid development is `watch`. It will start a new server, open up a browser and watch for any SCSS or JS changes in the `src` directory; once it compiles those changes, the browser will automatically inject the changed file(s)!
+UI Intern Assignment
+DESIGN BRIEF
+Like every growing city, Bangalore also struggles with a lot of infrastructure problems. Government ofﬁcials are unable to act on them as lot of times these problems do not get reported. The city corporation feels that empowering the citizens and engaging them to take an active part in maintaining the city will be a sustainable solution. To make this possible, the corporation has decided to develop a website named Active Society, where citizens can report their issues such as
+■   Potholes in the road, 
+■   Trafﬁc light not working,
+■   Garbage collection, etc
+FUNCTIONALITIES OF THE SITE Citizens can
+■   Report an issue
+■   Check the status of an issue 
+■   Delete or close an issue 
+Government ofﬁcials can
+■   Review an issue 
+■   Assign ofﬁcials 
+■   Update status of the issue
+TASKS TO BE COMPLETED
+Consider yourself as the UI designer given the task of designing this website. Create the UI design for the following pages
+■   Homepage 
+■   Reporting an issue
+ 
